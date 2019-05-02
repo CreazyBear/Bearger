@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+## Clipber软件许可及服务协议
 
-You can use the [editor on GitHub](https://github.com/WalterCreazyBear/Bearger/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+本软件尊重并保护所有使用服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务，本软件会按照本隐私权政策的规定使用您的个人信息。但本软件将以高度的勤勉、审慎义务对待这些信息。本软件不会将这些信息对外披露或向第三方提供。本软件会不时更新本隐私权政策。您在同意本软件服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于本软件服务使用协议不可分割的一部分。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+（一）适用范围
 
-### Markdown
+a)在您使用本软件网络服务，本软件自动接收并记录的您的手机上的信息，包括但不限于您的健康数据、使用的语言、访问日期和时间、软硬件特征信息及您需求的网页记录等数据；
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+（二）信息的使用
 
-```markdown
-Syntax highlighted code block
+在获得您的数据之后，本软件不会将其上传至服务器。您的所有相关数据只会存储在您的当前设备上。
 
-# Header 1
-## Header 2
-### Header 3
+（三）信息披露
 
-- Bulleted
-- List
+由于收集的信息只存储在您的当前使用的设备上，本软件不会也无法将您的信息透露给第三方。
 
-1. Numbered
-2. List
+(四)信息存储
 
-**Bold** and _Italic_ and `Code` text
+本软件收集的有关您的信息和资料将保存在本地。
 
-[Link](url) and ![Image](src)
-```
+（五）信息安全
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/WalterCreazyBear/Bearger/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+在使用本软件时，不可避免的的软件界面上展示相关内容。在使用时请注意敏感内容的保护，并定时对历史记录进行清理。离开电脑时请注意锁屏。
