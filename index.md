@@ -92,3 +92,11 @@
 ## Mac App Develop
 
 [Menu](./MacAppDevelop/Menu.md)
+
+
+
+---
+
+## WTF
+
+[Nav重复push\ vc的crash](./WTF/Nav重复push\ vc的crash.md)
