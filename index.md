@@ -75,9 +75,9 @@
 
 ## Clipber
 
-[隐私政策](./PrivacyPolicy.md)
+[隐私政策](./Clipber/PrivacyPolicy.md)
 
-[技术支持](./TechSupport.md)
+[技术支持](./Clipber/TechSupport.md)
 
 ---
 
