@@ -99,4 +99,4 @@
 
 ## WTF
 
-[Nav重复push\ vc的crash](./WTF/Nav重复push\ vc的crash.md)
+[Nav重复PushVC的crash](./WTF/Nav重复PushVC的crash.md)
