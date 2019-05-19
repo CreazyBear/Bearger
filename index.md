@@ -79,6 +79,8 @@
 
 [技术支持](./Clipber/TechSupport.md)
 
+[Clipber开发总结](./Clipber/Clipber开发总结.md)
+
 ---
 
 ## Coder

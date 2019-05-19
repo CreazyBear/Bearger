@@ -51,23 +51,18 @@ Clipber的功能还是很简单的，没有集成啥无用的功能（目前为�
 ## * 内存优化
 
 第一版的截图没有对图片进行压缩，所以app的内存占用还是有点不那么好看的。其实截图的原文件是放在本地的。数据库里只保存了一个路径。所以，Clipber显示的时候只需要加载一个压缩的图片就好。但是通过以下方法无法得到一个好的压缩效果。而且递归调用也无法继续压缩。
+
 ```objective-c
 NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:aimRate] forKey:NSImageCompressionFactor];
 NSData *data = [imageRep representationUsingType:NSBitmapImageFileTypeJPEG properties:imageProps];
 ```
+
 所以在生成`NSBitmapImageRep`时修改了一下。
+
 ```
-NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes: NULL 
-                                                                    pixelsWide: width
-                                                                    pixelsHigh: height
-                                                                 bitsPerSample: 8
-                                                               samplesPerPixel: 4
-                                                                      hasAlpha: YES
-                                                                      isPlanar: NO
-                                                                colorSpaceName: NSDeviceRGBColorSpace
-                                                                   bytesPerRow: width * 4
-                                                                  bitsPerPixel: 32];
+initWithBitmapDataPlanes:pixelsWide:pixelsHigh:bitsPerSample:samplesPerPixel:hasAlpha:isPlanar:colorSpaceName:bitmapFormat:bytesPerRow:bitsPerPixel:
 ```
+
 通过这种方式来直接对数据源进行有损压缩，以生成对应的缩略图。
 
 ## * 多语言
@@ -77,8 +72,5 @@ NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes: NULL
 
 ## * 上架
 
-就被拒绝了一次，比我表白被拒绝的次数还要少。
+就被拒绝了一次，比我表白被拒绝的次数还要少，可能是功能点很少，没啥好拒绝的吧。主要问题有两点吧：（1）最小权限原则：你不用的选项就不要点了。我是不小心把沙盒的文件只读权限开了，但又没用到。所以=。=；（2）暗黑模式没有适配；
 
-## * 问题总结
-
-1. SB、xib
