@@ -39,16 +39,10 @@ Clipber的功能还是很简单的，没有集成啥无用的功能（目前为�
     使用定时器对系统剪切板进行轮询，以实现监听。其实一直想找一种通知的方式，当剪切板发生变化的时候，直接通知到Clipber。但，找了一圈，无论是Google、Github、stackoverflow都没有相应的解决方案。尝试使用KVO也不成功。所以最后只能通过轮询来实现了。如果你知道相应的解决方案，欢迎提点一下。
 
 2. 截图
-
-
-
 3. 快捷键
-
-
-
 4. 开机自启动
 
-    这个是折腾最久的，倒不是说有多难实现，就是实现后总有这样或者那样的问题，而且又解决不了。所以，最后也是把这个功能先隐藏掉了。
+    这个是折腾最久的，倒不是说有多难实现，就是实现后总有这样或者那样的问题，处理起来特别诡异。而且自启动服务无法让用户在系统设置中进行管理。所以，最后也是把这个功能先隐藏掉了。需要自启动的话，可能通过系统设置，自行添加。
 
 ## * 内存泄漏
 
@@ -56,7 +50,25 @@ Clipber的功能还是很简单的，没有集成啥无用的功能（目前为�
 
 ## * 内存优化
 
-第一版的截图没有对图片进行压缩，所以app的内存占用还是有点不那么好看的。其实截图的原文件是放在本地的。数据库里只保存了一个路径。所以，Clipber显示的时候只需要加载一个压缩的图片就好。
+第一版的截图没有对图片进行压缩，所以app的内存占用还是有点不那么好看的。其实截图的原文件是放在本地的。数据库里只保存了一个路径。所以，Clipber显示的时候只需要加载一个压缩的图片就好。但是通过以下方法无法得到一个好的压缩效果。而且递归调用也无法继续压缩。
+```objective-c
+NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:aimRate] forKey:NSImageCompressionFactor];
+NSData *data = [imageRep representationUsingType:NSBitmapImageFileTypeJPEG properties:imageProps];
+```
+所以在生成`NSBitmapImageRep`时修改了一下。
+```
+NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes: NULL 
+                                                                    pixelsWide: width
+                                                                    pixelsHigh: height
+                                                                 bitsPerSample: 8
+                                                               samplesPerPixel: 4
+                                                                      hasAlpha: YES
+                                                                      isPlanar: NO
+                                                                colorSpaceName: NSDeviceRGBColorSpace
+                                                                   bytesPerRow: width * 4
+                                                                  bitsPerPixel: 32];
+```
+通过这种方式来直接对数据源进行有损压缩，以生成对应的缩略图。
 
 ## * 多语言
 
