@@ -95,7 +95,7 @@
 
 [Menu](./MacAppDevelop/Menu.md)
 
-
+[Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/macos/app-architecture/fullscreen-mode/)
 
 ---
 
