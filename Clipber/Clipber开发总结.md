@@ -65,6 +65,10 @@ initWithBitmapDataPlanes:pixelsWide:pixelsHigh:bitsPerSample:samplesPerPixel:has
 
 通过这种方式来直接对数据源进行有损压缩，以生成对应的缩略图。
 
+另外一个内存问题就是drawRect的重写导致的。截图功能涉及到很多的图片绘制，之前参考的Demo是直接在drawRect中进行图片绘制。计算量大，内存消耗严重。后面我直接改成CAShapeLayer来实现了。内存占用有明显的好转。
+
+但是虚拟内存的问题依旧没有根治，很多地方都增加虚拟内存，并且窗口消失后没有被释放掉。通过Xcode tool的内存分析工具一点一点的看，查找可以解决的地方，对实现方式进行更换。对一些自动引用延迟释放的对象进行手动释放掉。
+
 ## * 多语言
 
 因为这次使用了sb/xib，所以多语言分两块：（1）代码；（2）sb/xib。
