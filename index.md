@@ -8,7 +8,7 @@
 
 * [Block-变量捕获](./iOSer/变量捕获.md)
 
-* [Block-Type](./iOSer/Block\ type.md)
+* [Block-Type](./iOSer/BlockType.md)
 
 * [Block-@weakify](./iOSer/@weakify.md)
 
