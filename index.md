@@ -12,9 +12,9 @@
 
 * [Block-@weakify](./iOSer/@weakify.md)
 
-* [Cocoa Pods 创建私有仓库](./iOSer/Cocoa\ Pods\ 创建私有仓库.md)
+* [Cocoa Pods 创建私有仓库](./iOSer/CocoaPods创建私有仓库.md)
 
-* [crash日志符号化，以分析崩溃](./iOSer/crash日志符号化，以分析崩溃.md)
+* [crash日志符号化，以分析崩溃](./iOSer/crash日志符号化以分析崩溃.md)
 
 * [dSYM](./iOSer/dSYM.md)
 
