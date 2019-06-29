@@ -98,6 +98,8 @@
 
 * [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/macos/app-architecture/fullscreen-mode/)
 
+* [Note](./MacAppDevelop/Note.md)
+
 ---
 
 ## WTF
@@ -127,3 +129,9 @@
 ## 千百度
 
 * [为什么《千与千寻》过了18年才引进在大陆](./千百度/为什么《千与千寻》过了18年才引进在大陆.md)
+
+
+---
+## GitHub
+
+* [Collection](./GitHub/Collection.md)
