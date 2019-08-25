@@ -47,6 +47,7 @@ Learning System](https://learn.adafruit.com/introduction-to-bluetooth-low-energy
 
 1999 年下半年，微软、摩托罗拉、三星、朗讯与蓝牙特别小组的五家公司共同发起成立了蓝牙技术推广组织，从而在全球范围内掀起了一股「蓝牙」热潮。
 
+## 历史版本
 
 1. 版本1.0——1999.7
 2. 版本1.0b——1999.12
@@ -94,12 +95,13 @@ Learning System](https://learn.adafruit.com/introduction-to-bluetooth-low-energy
 	
 	略
 
-12. 支持BLE的设备
-    * iOS5+ (iOS7+ preferred)
-    * Android 4.3+ (numerous bug fixes in 4.4+)
-    * Apple OS X 10.6+
-    * Windows 8 (**XP, Vista and 7 only support Bluetooth 2.1**)
-    * GNU/Linux Vanilla BlueZ 4.93+
+## 支持BLE的设备
+
+* iOS5+ (iOS7+ preferred)
+* Android 4.3+ (numerous bug fixes in 4.4+)
+* Apple OS X 10.6+
+* Windows 8 (**XP, Vista and 7 only support Bluetooth 2.1**)
+* GNU/Linux Vanilla BlueZ 4.93+
 
 
 # 结构
