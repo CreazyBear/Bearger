@@ -16,15 +16,7 @@
 	1. BR/EDR
 	2. BLE
 6. 工具
-7. 参考资料：
-   1. https://mp.weixin.qq.com/s/j4qPJu-lve4x9W4vci59SQ
-   2. http://www.wowotech.net/bluetooth/bt_overview.html
-   3. http://www.wowotech.net/bluetooth/bt_protocol_arch.html
-   4. http://www.wowotech.net/bluetooth/ble_stack_overview.html
-   5. http://www.wowotech.net/bluetooth/ble_broadcast.html
-   6. [Introduction | Introduction to Bluetooth Low Energy | Adafruit
-Learning System](https://learn.adafruit.com/introduction-to-bluetooth-low-energy)
-   7. 《蓝牙核心技术及应用》
+7. 参考资料
 
 
 # 前言
@@ -191,8 +183,6 @@ GATT定义了主从设备之间数据传递的方式。使用过手机系统上�
 在GATT中定义了两个重要的概念：**Services**、**Characteristics**。我习惯称做**服务**、**特征值**。GATT实现ATT（Attribute Protocol），使用一张表来管理这些Service。这张服务表的每一个Service都有一个的UUID，这个UUID谁都可以创建、发布，是没有集中管理组织的。UUID可以是16位还可以是128位的，16位的UUID可以通过换算变成128位的UUID。这个UUID就是我们在使用系统API进行服务扫描时所使用的Service UUID，iOS系统API支持使用16和128的UUID。从蓝牙规范上看，16位的UUID由Bluetooth SIG分配和发布。但如上面所说，好像并不强制约束。
 
 > 个人感觉BLE框架ATT和BR/EDR的SDP很像。但不知道为啥要单独拆出来。  
-> [GATT Services | Bluetooth Technology Website](https://www.bluetooth.com/specifications/gatt/services/)  
-> [GATT Characteristics | Bluetooth Technology Website](https://www.bluetooth.com/specifications/gatt/characteristics/)  
 
 GATT作用在连接建立后，并且Advertiser一旦转变成Peripheral，那广播就需要停止。（连接成功后，会停止广播，=。=结婚了就不要去浪了）。连接建立后，数据通信就是双向的了。
 
@@ -292,8 +282,6 @@ GATT作用在连接建立后，并且Advertiser一旦转变成Peripheral，那�
 
 上面这张图大家对照结构看一下，就清楚了，没有什么复杂的逻辑，全是协议。对于其中的Access Address这个，根据蓝牙规范，在广播通道中是固定不变的，全一样。
 
-> AD Type官方文档：[Generic Access Profile | Bluetooth 技术网站](https://www.bluetooth.com/zh-cn/specifications/assigned-numbers/generic-access-profile/)  
-
 上面大家看到的是Link Layer的封包，这个已经非常底层了。最近跟随iOS13一起发布不家一个工具（后面再介绍）可以抓到HCI层的数据包。如下图所示（mac地址被打了码）。工具已经将原始数据解析出来了，我就不一一对应了（快吐了）。
 
 ![](Bluetooth/1566731841645_19_17_19__08_25_2019.jpg)
@@ -324,6 +312,7 @@ BLE的LinkLayer 和BR/EDR的LinkManager对应。在LinkLayer中有6种状态：�
 关于**BLE**网上的例子一堆 ，大同小异的，这里就不重复了，有问题的可以去搜一下。**BR/EDR**这个还没有接触过，坑也没有踩过，放在后面再单独写吧。
 
 这里列几个在使用蓝牙遇到的问题（相对于Android来说，iOS的问题还是少很多的）：
+
 1. 系统API并没有将Core Bluetooth的CBCentralManager设置成单例，所以在同一个应用中可以创建多个实例。但目前只尝试了扫描部分多实例，但连接之后的逻辑没有试过，也没有线上大批量数据验证。所以，只能确定，多个扫码实例是不会相互影响的。
 2. 连接失败：对于有的手机存在找到设备但连接不上的问题，根据线上数据，iOS12比之前iOS10的系统的连接成功率掉了千分之几个点，连接用时也相比长了。
 3. 连接成功，但找不到Charater。这个概率还挺大的。重试一下基本能解决。
@@ -333,19 +322,32 @@ BLE的LinkLayer 和BR/EDR的LinkManager对应。在LinkLayer中有6种状态：�
 
 1. Nordic: nRF Connect
 
-![](Bluetooth/1FD0381D-59E6-4A90-BEF0-695E628FDBB8.png)
+	![](Bluetooth/1FD0381D-59E6-4A90-BEF0-695E628FDBB8.png)
 
-Nordic出的一个手机蓝牙App工具，还是很给力的。有兴趣的可以去他们的Github上看一下其它的库，相信可以收获很多，毕竟人家是专业做蓝牙芯片的。
+	Nordic出的一个手机蓝牙App工具，还是很给力的。有兴趣的可以去他们的Github上看一下其它的库，相信可以收获很多，毕竟人家是专业做蓝牙芯片的。
 
 3. Apple: Core Bluetooth PacketLogger
 
-![](Bluetooth/B7217F88-D95F-4011-8687-28FF0E19625A.png)
+	![](Bluetooth/B7217F88-D95F-4011-8687-28FF0E19625A.png)
 
-苹果自家出的，可以抓到一些日志信息。按WWDC2019上介绍的，感觉还是不错的。Apple官网有下载，操作很简单。
+	苹果自家出的，可以抓到一些日志信息。按WWDC2019上介绍的，感觉还是不错的。Apple官网有下载，操作很简单。
 
 4. 自研
-上面介绍的两个工具都是基于通用协议来做的。但真实开发过程中，通常是需要结合自身业务场景的。所以建议开发一个结合自身通信协议的工具App来协助自己日常开发、测试。
+   
+	上面介绍的两个工具都是基于通用协议来做的。但真实开发过程中，通常是需要结合自身业务场景的。所以建议开发一个结合自身通信协议的工具App来协助自己日常开发、测试。
 
+# 参考资料：
+1. https://mp.weixin.qq.com/s/j4qPJu-lve4x9W4vci59SQ
+2. http://www.wowotech.net/bluetooth/bt_overview.html
+3. http://www.wowotech.net/bluetooth/bt_protocol_arch.html
+4. http://www.wowotech.net/bluetooth/ble_stack_overview.html
+5. http://www.wowotech.net/bluetooth/ble_broadcast.html
+6. [Introduction | Introduction to Bluetooth Low Energy | Adafruit
+Learning System](https://learn.adafruit.com/introduction-to-bluetooth-low-energy)
+7. 《蓝牙核心技术及应用》
+8. https://www.bluetooth.com/zh-cn/specifications/assigned-numbers/generic-access-profile/
+9. [GATT Services | Bluetooth Technology Website](https://www.bluetooth.com/specifications/gatt/services/)  
+10. [GATT Characteristics | Bluetooth Technology Website](https://www.bluetooth.com/specifications/gatt/characteristics/)  
 
 
 
