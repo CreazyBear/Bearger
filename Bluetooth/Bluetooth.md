@@ -342,12 +342,11 @@ BLE的LinkLayer 和BR/EDR的LinkManager对应。在LinkLayer中有6种状态：�
 3. http://www.wowotech.net/bluetooth/bt_protocol_arch.html
 4. http://www.wowotech.net/bluetooth/ble_stack_overview.html
 5. http://www.wowotech.net/bluetooth/ble_broadcast.html
-6. [Introduction | Introduction to Bluetooth Low Energy | Adafruit
-Learning System](https://learn.adafruit.com/introduction-to-bluetooth-low-energy)
+6. https://learn.adafruit.com/introduction-to-bluetooth-low-energy
 7. 《蓝牙核心技术及应用》
 8. https://www.bluetooth.com/zh-cn/specifications/assigned-numbers/generic-access-profile/
-9. [GATT Services | Bluetooth Technology Website](https://www.bluetooth.com/specifications/gatt/services/)  
-10. [GATT Characteristics | Bluetooth Technology Website](https://www.bluetooth.com/specifications/gatt/characteristics/)  
+9. https://www.bluetooth.com/specifications/gatt/services/
+10. https://www.bluetooth.com/specifications/gatt/characteristics/
 
 
 
