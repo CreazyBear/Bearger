@@ -13,52 +13,53 @@
 11. 字符串和日期常数需要使用单引号(')括起来。
 12. 所有的列都必须指定数据类型。每一列 都不能存储与该列数据类型不符的数据
 13. eg
-```sql
-CREATE TABLE <表名>
-(
-<列名1> <数据类型> <该列所需约束>，
-<列名2> <数据类型> <该列所需约束>， 
-<列名3> <数据类型> <该列所需约束>，
-<列名4> <数据类型> <该列所需约束>，
-......
-<该表的约束1>， <该表的约束2>，......
-);
 
-create table Product
-(
-product_id char(4) NOT NULL,
-product_name VARCHAR(200) NOT NULL,
-product_type VARCHAR(32) NOT NULL,
-sale_price INTEGER,
-purchase_price INTEGER,
-regist_date DATE,
-PRIMARY KEY (product_id)
-);
+    ```sql
+    CREATE TABLE <表名>
+    (
+    <列名1> <数据类型> <该列所需约束>，
+    <列名2> <数据类型> <该列所需约束>， 
+    <列名3> <数据类型> <该列所需约束>，
+    <列名4> <数据类型> <该列所需约束>，
+    ......
+    <该表的约束1>， <该表的约束2>，......
+    );
 
-INSERT INTO Product VALUES ('0001', 'T恤衫', '衣服', 1000, 500, '2009-09-20');
-INSERT INTO Product VALUES ('0002', '打孔器', '办公用品', 500, 320, '2009-09-11');
-INSERT INTO Product VALUES ('0003', '运动T恤','衣服', 4000, 2800, NULL);
-INSERT INTO Product VALUES ('0004', '菜刀', '厨房用具',3000, 2800, '2009-09-20');
-INSERT INTO Product VALUES ('0005', '高压锅','厨房用具', 6800, 5000, '2009-01-15');
-INSERT INTO Product VALUES ('0006', '叉子', '厨房用具',500, NULL, '2009-09-20');
-INSERT INTO Product VALUES ('0007', '擦菜板', '厨房用具',880, 790, '2008-04-28');
-INSERT INTO Product VALUES ('0008', '圆珠笔','办公用品', 100, NULL,'2009-11-11');
+    create table Product
+    (
+    product_id char(4) NOT NULL,
+    product_name VARCHAR(200) NOT NULL,
+    product_type VARCHAR(32) NOT NULL,
+    sale_price INTEGER,
+    purchase_price INTEGER,
+    regist_date DATE,
+    PRIMARY KEY (product_id)
+    );
 
-CREATE TABLE ProductIns (
-product_id char(4) not null,
-product_name varchar(100) not null,
-product_type varchar(32) not null,
-sale_price integer default(0),
-purchase_price INTEGER ,
-regist_date DATE ,
-PRIMARY KEY (product_id));
+    INSERT INTO Product VALUES ('0001', 'T恤衫', '衣服', 1000, 500, '2009-09-20');
+    INSERT INTO Product VALUES ('0002', '打孔器', '办公用品', 500, 320, '2009-09-11');
+    INSERT INTO Product VALUES ('0003', '运动T恤','衣服', 4000, 2800, NULL);
+    INSERT INTO Product VALUES ('0004', '菜刀', '厨房用具',3000, 2800, '2009-09-20');
+    INSERT INTO Product VALUES ('0005', '高压锅','厨房用具', 6800, 5000, '2009-01-15');
+    INSERT INTO Product VALUES ('0006', '叉子', '厨房用具',500, NULL, '2009-09-20');
+    INSERT INTO Product VALUES ('0007', '擦菜板', '厨房用具',880, 790, '2008-04-28');
+    INSERT INTO Product VALUES ('0008', '圆珠笔','办公用品', 100, NULL,'2009-11-11');
 
-CREATE TABLE ProductType (
-product_type VARCHAR(32) not null,
-sum_sale_price INTEGER,
-sum_purchase_price INTEGER ,
-PRIMARY KEY (product_type));
-```
+    CREATE TABLE ProductIns (
+    product_id char(4) not null,
+    product_name varchar(100) not null,
+    product_type varchar(32) not null,
+    sale_price integer default(0),
+    purchase_price INTEGER ,
+    regist_date DATE ,
+    PRIMARY KEY (product_id));
+
+    CREATE TABLE ProductType (
+    product_type VARCHAR(32) not null,
+    sum_sale_price INTEGER,
+    sum_purchase_price INTEGER ,
+    PRIMARY KEY (product_type));
+    ```
 
 # 查询基础
 
@@ -83,7 +84,7 @@ PRIMARY KEY (product_type));
     ```
     虽然书上说：中文需要双引号，但=。=不绝对
 
-2. 常量
+3. 常量
     ```sql
     SELECT 
         '商品' AS string, 
@@ -94,21 +95,21 @@ PRIMARY KEY (product_type));
     FROM Product;
     ```
 
-3. 去重
+4. 去重
     ```sql
     SELECT DISTINCT product_type, regist_date FROM Product;
     ```
     * 将多个列的数据进行组合，将重复的数据合并为一条;
     * DISTINCT 关键字只能用在第一个列名之前。
 
-4. 算术运算符(+、-、*、/)和比较运算符(=,<,>,>=,<=,<>)
-5. 所有包含 NULL 的计算，结果肯定是 NULL
-6. 不能对 NULL 使用比较运算符;希望选取 NULL 记录时，需要在条件表达式中使用 IS NULL 运算符。希望选取不 是 NULL 的记录时，需要在条件表达式中使用 IS NOT NULL 运算符。
+5. 算术运算符(+、-、*、/)和比较运算符(=,<,>,>=,<=,<>)
+6. 所有包含 NULL 的计算，结果肯定是 NULL
+7. 不能对 NULL 使用比较运算符;希望选取 NULL 记录时，需要在条件表达式中使用 IS NULL 运算符。希望选取不 是 NULL 的记录时，需要在条件表达式中使用 IS NOT NULL 运算符。
     ```sql
     SELECT product_name, purchase_price FROM Product
     WHERE purchase_price IS NULL;
     ```
-7. 逻辑运算符:NOT,AND,OR
+8. 逻辑运算符:NOT,AND,OR
     ```SQL
     SELECT product_name, product_type, regist_date FROM Product
     WHERE product_type = '办公用品'
