@@ -38,6 +38,6 @@
 
 
 
-![](./images/1567846691.276996.png)
+![](images/1567846691.276996.png)
 
-![](./images/E06E268E-29EF-43C8-B729-85AE9A5FE36C.png)
+![](images/E06E268E-29EF-43C8-B729-85AE9A5FE36C.png)
