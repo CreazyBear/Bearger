@@ -114,6 +114,9 @@
 
 * [Sparkle](./MacAppDevelop/Sparkle.md)
 
+* [Kick off xib/sb](./MacAppDevelop/纯代码开发.md)
+
+* [SimLocation](./MacAppDevelop/SimLocation.md)
 
 ---
 
