@@ -9,7 +9,7 @@
 
 * [Block](./iOSer/block.md)
 
-* [Block-What’s Block](./iOSer/What’s\ Block.md)
+* [Block-What’s Block](./iOSer/什么是Block.md)
 
 * [Block-变量捕获](./iOSer/变量捕获.md)
 
@@ -25,7 +25,7 @@
 
 * [iMessage](./iOSer/iMessage.md)
 
-* [iOS 模拟器改变定位地点的两种方法](./iOSer/iOS\ 模拟器改变定位地点的两种方法.md)
+* [iOS 模拟器改变定位地点的两种方法](./iOSer/iOS模拟器改变定位地点的两种方法.md)
 
 * [iOS数据持久化](./iOSer/iOS数据持久化.md)
 
@@ -35,13 +35,67 @@
 
 * [pbxproj](./iOSer/pbxproj.md)
 
-* [关于atomic 和 nonatomic 有什么区别](./iOSer/关于atomic\ 和\ nonatomic\ 有什么区别.md)
+* [关于atomic 和 nonatomic 有什么区别](./iOSer/关于atomic和nonatomic有什么区别.md)
 
 * [关于iOS包大小需要注意的两点](./iOSer/关于iOS包大小需要注意的两点.md)
 
 * [数据存储](./iOSer/数据存储.md)
 
 * [文件管理](./iOSer/文件管理.md)
+
+* [线程安全的计数](./iOSer/线程安全的计数.md)
+
+* [Lock](./iOSer/Lock.md)
+
+* [NSOperation](./iOSer/NSOperation.md)
+
+* [GCD多线程](./iOSer/GCD多线程.md)
+
+* [initialize与load](./iOSer/initialize与load.md)
+
+* [iOS知识点百问](./iOSer/iOS知识点百问.md)
+
+* [ARKit](./iOSer/ARKit.md)
+
+* [Bluetooth](./Bluetooth/Bluetooth.md)
+
+* [YapDataBase](./iOSer/YapDataBase.md)
+
+* [URLSession Programming Guide](./iOSer/URLSessionProgrammingGuide.md)
+
+* [NSRegular](./iOSer/NSRegular.md)
+
+* [NSPredicate](./iOSer/NSPredicate.md)
+
+* [NSString中判断中文_英文_数字](./iOSer/NSString中判断中文_英文_数字.md)
+
+* [状态栏](./iOSer/状态栏.md)
+
+* [图片压缩](./iOSer/图片压缩.md)
+
+* [手势](./iOSer/手势.md)
+
+* [图片缩放与压缩](./iOSer/图片缩放与压缩.md)
+
+* [NSRunLoopMode](./iOSer/NSRunLoopMode.md)
+
+* [多线程](./iOSer/多线程.md)
+
+* [iOS-Objective-C中的那些设计模式](./iOSer/iOS-Objective-C中的那些设计模式.md)
+
+* [MVVM两个作用](./iOSer/MVVM两个作用.md)
+
+* [CodeSnippet](./iOSer/CodeSnippet.md)
+
+* [定时任务](./iOSer/定时任务.md)
+
+* [Debug](./iOSer/Debug.md)
+
+* [OpenUrl](./iOSer/OpenUrl.md)
+
+* [imageNamed和imageWithContentsOfFile](./iOSer/imageNamed和imageWithContentsOfFile.md)
+
+* [Crash](./iOSer/Crash.md)
 
 
 ---
@@ -53,7 +107,6 @@
 * [申请开发者帐号（交钱入会）](./苹果开发者帐号/申请开发者帐号（交钱入会）)
 
 * [开发者帐号](./苹果开发者帐号/开发者帐号.md)
-
 
 ---
 
@@ -101,6 +154,11 @@
 
 * [SQL基础](./Coder/SQL基础.md)
 
+* [OC总结](./Coder/OC总结.md)
+  
+* [Tuniu代码优化](./Coder/Tuniu代码优化)
+
+* [程序员自我修养](./Coder/程序员自我修养/程序员自我修养.md)
 
 ---
 
@@ -123,6 +181,16 @@
 ## WTF
 
 * [Nav重复PushVC的crash](./WTF/Nav重复PushVC的crash.md)
+
+* [多线程写读写字典引起的crash](./WTF/多线程写读写字典引起的crash.md)
+
+* [使用了未初始化过的变量](./WTF/使用了未初始化过的变量.md)
+
+* [向字典中添加nil对象引起的crash](./WTF/向字典中添加nil对象引起的crash.md)
+
+* [循环引用](./WTF/循环引用.md)
+
+* [block野指针](./WTF/block野指针.md)
 
 
 ---
@@ -160,9 +228,6 @@
 
 
 ---
-
-## Bluetooth
-* [Bluetooth](./Bluetooth/Bluetooth.md)
 
 > Just For Fun —— Bearger
 

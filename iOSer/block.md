@@ -66,7 +66,7 @@ myBlock = ^( int paramA )
 定义好block后，就可以像使用标准函数一样使用它了：
 `myBlock(7);`
 由于block数据类型的语法会降低整个代码的阅读性，所以常使用typedef来定义block类型。例如，下面的代码创建了GetPersonEducationInfo和GetPersonFamilyInfo两个新类型，这样我们就可以在下面的方法中使用更加有语义的数据类型。
-```
+```objc
 // Person.h
 #import // Define a new type for the block
 typedef NSString * (^GetPersonEducationInfo)(NSString *);

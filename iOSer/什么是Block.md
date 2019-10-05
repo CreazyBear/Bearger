@@ -83,3 +83,6 @@ static void _I_BlockDemo_start(BlockDemo * self, SEL _cmd) {
 // @end
 
 ```
+
+今天在看OC 52时发出的一张图。虽然和现在的代码有点差异，但图本身还不错，放在这里好了
+![](./1570254529.991790.png)
