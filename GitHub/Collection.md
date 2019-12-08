@@ -89,6 +89,7 @@ UI检查	[GitHub - Flipboard/FLEX: An in-app debugging and exploration tool for 
 [GitHub - ccgus/fmdb: A Cocoa / Objective-C wrapper around SQLite](https://github.com/ccgus/fmdb)
 
 
+[LetsMove](https://github.com/potionfactory/LetsMove/) 移动App到 application文件夹
 
 
 
