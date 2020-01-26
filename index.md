@@ -145,6 +145,13 @@
 
 * [Clipber开发总结](./Clipber/Clipber开发总结.md)
 
+---
+
+## SScanner
+
+* [隐私政策](./SScanner/PrivacyPolicy.md)
+
+* [技术支持](./SScanner/TechSupport.md)
 
 ---
 
