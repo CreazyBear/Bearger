@@ -322,6 +322,393 @@ var body: some View {
 
 ```
 
+### 10. DatePicker
+```swift
+    
+    @State var selectedDate = Date()
+    var dateClosedRange: ClosedRange<Date> {
+        let min = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+        let max = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        return min...max
+    }
+    
+    var body: some View {
+        
+        VStack{
+
+            
+            NavigationView {
+                Form {
+                    Section {
+                        DatePicker(
+                            selection: $selectedDate,
+                            in: dateClosedRange,
+                            displayedComponents: .date,
+                            label: { Text("Due Date") }
+                        )
+                    }
+                }
+            }
+            
+            DatePicker(
+                selection: $selectedDate,
+                in: dateClosedRange,
+                displayedComponents: [.hourAndMinute, .date],
+                label: {
+                    VStack {
+                        Text("Due Date")
+                        Image(systemName: "clock")
+                        Text("Click Me")
+                        Text("Subtitle")
+                    }
+                    
+                }
+            )
+            
+            
+            DatePicker("Due Date",
+                       selection: $selectedDate,
+                       in: dateClosedRange,
+                       displayedComponents: [.hourAndMinute, .date])
+            
+        }
+        
+    }
+
+```
+
+### 11. Slider
+
+```swift
+HStack {
+    Image(systemName: "sun.min")
+    Slider.init(value: $progress)
+    Image(systemName: "sun.max.fill")
+}.padding()
+
+```
+
+### 12. Stepper
+
+```swift
+@State var quantity: Int = 0
+var body: some View {
+    
+    Stepper(onIncrement: {
+        self.quantity += 1
+    }, onDecrement: {
+        self.quantity -= 1
+    }, label: { Text("Quantity \(quantity)") })
+
+}
+
+```
+
+### 13. List
+
+```swift
+
+    var body: some View {
+        
+        List {
+            Section(header: Text("UIKit"), footer: Text("We will miss you")) {
+                Text("UITableView")
+                Text("hello")
+                Image(systemName: "clock")
+            }
+
+            Section(header: Text("SwiftUI"), footer: Text("A lot to learn")) {
+                Text("List")
+                Text("hello")
+            }
+            
+            Text("hello")
+            Text("hello")
+            Image(systemName: "clock")
+        }.listStyle(GroupedListStyle())
+    }
+```
+
+### 14. ScrollView
+
+```swift
+    var body: some View {
+        
+        ScrollView {
+            Image(systemName: "clock")
+            Text("Hello World")
+            Text("Hello World")
+            Text("Hello World")
+            Text("Hello World")
+        }
+    }
+
+```
+
+### 15. Form
+
+```swift
+    @State var selectedDate = Date()
+    @State var selection:String = ""
+    @State var quantity: Int = 0
+    var body: some View {
+        NavigationView {
+            Form {
+                Section {
+                    Text("Plain Text")
+                    Stepper(value: $quantity, in: 0...10, label: { Text("Quantity") })
+                }
+                Section {
+                    DatePicker(selection: $selectedDate, label: { Text("Due Date") })
+                    Picker(selection: $selection, label:
+                        Text("Picker Name")
+                        , content: {
+                            Text("Value 1").tag(0)
+                            Text("Value 2").tag(1)
+                            Text("Value 3").tag(2)
+                            Text("Value 4").tag(3)
+                    })
+                }
+            }
+        }
+    }
+
+```
+
+### 16. Divider
+
+就是一条䣓线
+```swift
+        VStack {
+            Image(systemName: "clock")
+            Divider()
+            Text("Time")
+        }.fixedSize()
+
+```
+
+### 17. NavigationView
+
+```swift
+NavigationView {
+    List {
+        Text("Hello World")
+    }
+    .navigationBarTitle(Text("Navigation Title"), displayMode: .inline)
+}
+
+var body: some View {
+    NavigationView {
+        List {
+            Text("Hello World")
+        }
+        .navigationBarItems(leading:
+            Button(action: {
+                // Add action
+            }, label: {
+                Text("DEL")
+            }),
+            trailing:
+            Button(action: {
+                // Add action
+            }, label: {
+                Text("Add")
+            })
+
+        )
+        .navigationBarTitle(Text("Navigation Title"), displayMode: .inline)
+    }   
+}
+```
+
+### 18. TabView
+
+
+```swift
+    var body: some View {
+        TabView {
+            Text("First View")
+                .font(.title)
+                .tabItem({ Text("First") })
+                .tag(0)
+            Text("Second View")
+                .font(.title)
+                .tabItem({
+                    VStack {
+                        Image(systemName: "clock")
+                        Text("Second")
+                    }
+                })
+                .tag(1)
+        }
+    }
+
+```
+
+
+### 19. Alert
+
+```swift
+    @State var error: AlertError?
+
+    @State var isError: Bool = false
+    var body: some View {
+        
+        VStack {
+            Button("Alert") {
+                  self.isError = true
+              }.alert(isPresented: $isError, content: {
+                  Alert(title: Text("Error"),
+                        message: Text("Error Reason"),
+                        dismissButton: .default(Text("OK")))
+              })
+              
+              Button("Alert Error") {
+                  self.error = AlertError(reason: "Reason xxx")
+              }.alert(item: $error, content: { error in
+                  alert(reason: error.reason)
+              })
+        }
+  
+    }
+    
+    func alert(reason: String) -> Alert {
+        Alert(title: Text("Error"),
+                message: Text(reason),
+                dismissButton: .default(Text("OK"))
+        )
+    }
+
+    struct AlertError: Identifiable {
+        var id: String {
+            return reason
+        }
+        
+        let reason: String
+    }
+```
+
+### 20. Modal
+
+```swift
+    @State var isModal: Bool = false
+    var modal: some View {
+        VStack {
+            Text("Modal")
+            Text("Modal")
+            Text("Modal")
+            Text("Modal")
+        }
+    }
+
+    var body: some View {
+        
+        VStack {
+        
+            Button("Modal") {
+                self.isModal = true
+            }.sheet(isPresented: $isModal, content: {
+                self.modal
+            })
+            
+        }
+  
+    }
+```
+
+### 21. ActionSheet
+
+```swift
+    
+   @State var sheetDetail: SheetDetail?
+
+    var body: some View {
+        Button("Action Sheet") {
+            self.sheetDetail = SheetDetail(body: "Detail")
+        }.actionSheet(item: $sheetDetail, content: { detail in
+            self.sheet(detail: detail.body)
+        })
+    }
+
+    func sheet(detail: String) -> ActionSheet {
+        ActionSheet(title: Text("Action"),
+                    message: Text(detail),
+                    buttons: [
+                        .default(Text("OK"), action: {
+                            
+                        }),
+                        .destructive(Text("Delete"), action: {
+                            
+                        })
+                    ]
+        )
+    }
+
+    struct SheetDetail: Identifiable {
+        var id: String {
+            return body
+        }
+        
+        let body: String
+    }
+    
+```
+
+
+### 总结
+
+先写这么多吧，总来来说还是很方便的，但API是真的和之前相差有点大。需要重新熟悉一次，有点伤。但从可视化的角度来看，还是很香的。不知道在大的项目中是不是也能有这样的速度。有的UIView的能力目前还不支持，不过SwiftUI支持将原来有UIView包装成SwiftUI组件来使用。
+
+
+## 三、UIKit in SwiftUI
+
+https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit
+
+```swift
+struct PageControl: UIViewRepresentable {
+    var numberOfPages: Int
+    @Binding var currentPage: Int
+
+    func makeUIView(context: Context) -> UIPageControl {
+        let control = UIPageControl()
+        control.numberOfPages = numberOfPages
+
+        return control
+    }
+
+    func updateUIView(_ uiView: UIPageControl, context: Context) {
+        uiView.currentPage = currentPage
+    }
+}
+
+
+import SwiftUI
+import UIKit
+
+struct PageViewController: UIViewControllerRepresentable {
+    var controllers: [UIViewController]
+
+    func makeUIViewController(context: Context) -> UIPageViewController {
+        let pageViewController = UIPageViewController(
+            transitionStyle: .scroll,
+            navigationOrientation: .horizontal)
+
+        return pageViewController
+    }
+
+    func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
+        pageViewController.setViewControllers(
+            [controllers[0]], direction: .forward, animated: true)
+    }
+}
+```
+
+类似这样吧，上面提到的attributeStr也是类似的方法实现的。
+
+以上都只是浅薄的使用。SwiftUI很多地方需要结合Swift语法特性来操作。后面有空再跟着官方的示例做一下好了。其实官方的那个App的实用价值还是有的。不知道抄一抄改一改能不能上架 :)
+
+## 四、实践
+
 
 ## 问题收集
 
@@ -334,6 +721,8 @@ var body: some View {
 
 
 ## 资料
+
+https://developer.apple.com/documentation/swiftui
 
 https://developer.apple.com/tutorials/swiftui
 
