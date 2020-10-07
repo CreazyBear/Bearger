@@ -1,4 +1,4 @@
-## NFCer - 剪贴板扩展
+## NFCer - NFC工具
 
 #### 为什么诞生NFCer
 
