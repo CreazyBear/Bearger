@@ -1,5 +1,0 @@
-# NSZone
-#程序员/iOS/内存管理
-
-
-![](NSZone/6C2966E8-9BF8-4F9E-87E5-6F25E06FFA5E.png)
