@@ -1,7 +1,6 @@
 # GitHub汇总
 
 [用于导出dmg包中的资源car、ipa](https://github.com/devcxm/iOS-Images-Extractor)
-    
 [Alert](https://github.com/dogo/SCLAlertView)
 
 [GitHub - vsouza/awesome-ios: A curated list of awesome iOS ecosystem, including Objective-C and Swift Projects](https://github.com/vsouza/awesome-ios)
