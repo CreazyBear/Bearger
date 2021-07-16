@@ -16,6 +16,11 @@
 * [技术支持](./NFCer/TechSupport.md)
 
 
+## FJScanner
+
+* [隐私政策](./FJScanner/PrivacyPolicy.md)
+
+* [技术支持](./FJScanner/TechSupport.md)
 
 ---
 
