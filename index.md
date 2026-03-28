@@ -1,12 +1,11 @@
 # 跬步
 
 
+## BitClip
 
-## Clipber
+* [隐私政策](./BitClip/PrivacyPolicy.md)
 
-* [隐私政策](./Clipber/PrivacyPolicy.md)
-
-* [技术支持](./Clipber/TechSupport.md)
+* [技术支持](./BitClip/TechSupport.md)
 
 
 ## NFCer
